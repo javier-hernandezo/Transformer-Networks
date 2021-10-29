@@ -1,7 +1,11 @@
-# Spatial-Transformer-Networks
+# Transformer Networks
 
-Repository with the implementation in PyTorch of a visual attention mechanism called Spatial Transformer
-Networks (STN) for MNIST classification.
+Repository with the implementation in PyTorch of visual attention mechanisms called Spatial Transformer
+Networks (STN) and CoordConv layers for MNIST classification.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+## Spatial-Transformer-Networks
 
 Based on the paper: "Spatial transformer networks", Max Jaderberg et al., Advances in neural information processing systems, 2015, vol. 28, p. 2017-2025. https://arxiv.org/abs/1506.02025 
 
@@ -44,7 +48,7 @@ https://arxiv.org/pdf/1807.03247.pdf
 - spatial_transformer_nets_with_coord_convs.py: script for training the network with STNs and CoordConv layers.
 - spatial_transformer_tutorial.py: script for training the network with STNs and Conv2D layers. Based on the tutorial in https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html. 
 - evaluate_models.py: script for testing the pretrained models with the MNIST dataset.
-- stn_classic.pt and stn_coordconv.pt: trained models.
+- stn_classic.pt and stn_coordconv.pt: PyTorch trained models.
 
 
 -- Using the models for replicating our results for MNIST classification:
