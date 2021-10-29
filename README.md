@@ -12,14 +12,14 @@ CNNs are not invariant to rotation and scale and more general affine transformat
 
 STNs can be simply inserted into existing convolutional architectures without any extra training supervision or modification to the optimization process.
 
-In this repository also an implementation of STNs with the addition of CoordConv layers is provided.
+In this repository also an implementation of STNs with the addition of CoordConv layers is provided. 
 
 ![Example](images/CoordConv.PNG)
 
-CoordConv layers modify the traditional convolutional layers by adding information about the coordinates of the input images to the input tensor. The CoordConv layer is designed to be used a substitute of the regular Conv2D layer.
+Convolutions present a generic inability to transform spatial representations between two different types: from a dense Cartesian representation to a sparse, pixel-based representation or in the opposite direction. CoordConv layers were designed to solve this limitation modifying the traditional convolutional layers by adding information about the coordinates of the input images to the input tensor. The CoordConv layer is designed to be used a substitute of the regular Conv2D layer.
 
 CoordConv layers are presented in the paper:  "An intriguing failing of convolutional neural networks and the coordconv solution", Rosanne Liu et al., arXiv preprint arXiv:1807.03247 (2018). 
-https://arxiv.org/pdf/1807.03247.pdf%7C 
+https://arxiv.org/pdf/1807.03247.pdf
 
 ![Example](./images/MNIST_example.png)
 
