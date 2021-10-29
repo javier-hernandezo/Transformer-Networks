@@ -52,8 +52,12 @@ https://arxiv.org/pdf/1807.03247.pdf
 
 ## Results on MNIST classification:
 
+Results have been obtained after training the models during 20 epochs.
+
+![Example](images/results.PNG)
+
 ![Example](./images/MNIST_example.png)
 
-Results of image warping for the MNIST dataset. 
+Examples of image warping for a test batch of the MNIST dataset. CoordConv layers obtain better results in most of the cases. For example, the two upper-left number 1s are more vertical in the CoordConv case than when using only STN with Conv2D layers.
 
 
