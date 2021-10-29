@@ -3,9 +3,13 @@
 Repository with the implementation in PyTorch of visual attention mechanisms called Spatial Transformer
 Networks (STN) and CoordConv layers for MNIST classification.
 
+In this repository we provide two different networks in PyTorch:
+- A CNN with Spatial Transformer Networks, designed for making the original network more robust to transformations in input data, e.g., rotations, traslations, etc. 
+- A modification of the first network with the addition of CoordConv layers. This type of layers are meant to provide Conv layers with information about the coordinates of the input images. That information can be used to improve the accuracy of the network.
+
 -------------------------------------------------------------------------------------------------------------------------------
 
-## Spatial-Transformer-Networks
+## Spatial Transformer Networks
 
 Based on the paper: "Spatial transformer networks", Max Jaderberg et al., Advances in neural information processing systems, 2015, vol. 28, p. 2017-2025. https://arxiv.org/abs/1506.02025 
 
@@ -45,8 +49,8 @@ https://arxiv.org/pdf/1807.03247.pdf
 - models.py: definition of the backbone CNN’s architecture.
 - coord_conv.py: definition of the CoordConv layers.
 - utils.py: definition of various functions used during training and testing.
-- spatial_transformer_nets_with_coord_convs.py: script for training the network with STNs and CoordConv layers.
 - spatial_transformer_tutorial.py: script for training the network with STNs and Conv2D layers. Based on the tutorial in https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html. 
+- spatial_transformer_nets_with_coord_convs.py: script for training the network with STNs and CoordConv layers.
 - evaluate_models.py: script for testing the pretrained models with the MNIST dataset.
 - stn_classic.pt and stn_coordconv.pt: PyTorch trained models.
 
