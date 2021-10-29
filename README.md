@@ -38,19 +38,22 @@ https://arxiv.org/pdf/1807.03247.pdf
       
 2) Files and descriptions:
 
-       ssssss
+- models.py: definition of the backbone CNN’s architecture.
+- coord_conv.py: definition of the CoordConv layers.
+- utils.py: definition of various functions used during training and testing.
+- spatial_transformer_nets_with_coord_convs.py: script for training the network with STNs and CoordConv layers.
+- spatial_transformer_tutorial.py: script for training the network with STNs and Conv2D layers. Based on the tutorial in https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html. 
+- evaluate_models.py: script for testing the pretrained models with the MNIST dataset.
+- stn_classic.pt and stn_coordconv.pt: trained models.
 
-   
--- Using the models for MNIST classification:
+
+-- Using the models for replicating our results for MNIST classification:
   
-1) You have to run the vid_to_deepframes_rawframes.py script : it preprocesses the video sequences to obtain the raw normalized frames and the difference frames to feed DeepFakesON-Phys. 
-        
-2) Run the DeepFakesON-Phys_extract_preditions.py script: it makes inference with the processed input and returns a fake/genuine score for each frame in the video and saves them in the scores.txt file. You can combine the individual scores as you wish, e.g., by temporal windows, using some kind of temporal integration, etc.
-  
+1) You have to run the evaluate_models.py script : it loads the already trained models and evaluates them on the test partition of the MNIST dataset. 
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-## Results on MNIST classification:
+## Results for MNIST classification:
 
 Results have been obtained after training the models during 20 epochs.
 
