@@ -34,7 +34,7 @@ https://arxiv.org/pdf/1807.03247.pdf
 
 1) Download or clone the repository to a local folder:
 
-       git clone 
+       git clone "https://github.com/uam-biometrics/Spatial-Transformer-Networks.git"
       
 2) Files and descriptions:
 
