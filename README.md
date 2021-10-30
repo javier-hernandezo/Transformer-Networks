@@ -5,7 +5,9 @@ Networks (STN) and CoordConv layers for MNIST classification.
 
 In this repository we provide two different networks in PyTorch:
 - A CNN with Spatial Transformer Networks, designed for making the original network more robust to transformations in input data, e.g., rotations, traslations, etc. 
-- A modification of the first network with the addition of CoordConv layers. This type of layers are meant to provide Conv layers with information about the coordinates of the input images. That information can be used to improve the accuracy of the network in some specific tasks.
+- A modification of the first network with the addition of CoordConv layers to the Localization Network (LN) of the STN. This type of layers are meant to provide Conv layers with information about the coordinates of the input images. The LN has the task of obtaining a affine transformation matrix from input images, and the CoordConv layers
+have shown to improve accuracy in that type of tasks.
+
 
 -------------------------------------------------------------------------------------------------------------------------------
 
