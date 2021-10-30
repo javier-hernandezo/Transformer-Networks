@@ -11,10 +11,14 @@ from utils import test, visualize_stn, convert_image_np
 from models import Net, coordConvNet
 
 
-""" Script for the evaluation of the trained models. We evaluate and compare a CNN with STN, and another network in which we 
-applied CoordConv layers to the LTN of the STN to improve the accuracy of the affine transformations."""
+"""
+Script for the evaluation of the STN and STN + CoordConv models trained on MNIST. 
 
-  
+We evaluate and compare a CNN with STN, and the same network but adding 
+CoordConv layers to the LTN of the STN to improve the accuracy of the affine transformations.
+
+**Author**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
+"""
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")             
 

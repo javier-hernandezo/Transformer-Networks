@@ -2,9 +2,14 @@ import torch
 from torch import nn
 
 
-"""Based on https://github.com/Wizaron/coord-conv-pytorch implementation in PyTorch of the CoordConv paper:
-"REF: An intriguing failing of convolutional neural networks and the CoordConv solution" https://arxiv.org/abs/1807.03247
- """
+"""
+**Author**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
+
+Definition of the classes needed for the use of CoordConv layers in a CNN.
+
+Based on https://github.com/Wizaron/coord-conv-pytorch. An implementation in PyTorch of the CoordConv paper:
+"An intriguing failing of convolutional neural networks and the CoordConv solution" https://arxiv.org/abs/1807.03247
+"""
 
 class AddCoordinates(object):
 

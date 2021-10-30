@@ -14,15 +14,12 @@ from utils import train, test, visualize_stn, convert_image_np
 """
 Spatial Transformer Networks Tutorial
 =====================================
-**Author**: `Ghassen HAMROUNI <https://github.com/GHamrouni>`_
+**Original Author**: `Ghassen HAMROUNI <https://github.com/GHamrouni>`_
+**Changes made by**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
 
-.. figure:: /_static/img/stn/FSeq.png
-
-In this tutorial, you will learn how to augment your network using
-a visual attention mechanism called spatial transformer
-networks. You can read more about the spatial transformer
-networks in the `DeepMind paper <https://arxiv.org/abs/1506.02025>`__
-
+Code to augment a CNN using a visual attention mechanism called spatial transformer
+networks. 
+You can read more about the spatial transformer networks in the `DeepMind paper <https://arxiv.org/abs/1506.02025>`__
 Spatial transformer networks are a generalization of differentiable
 attention to any spatial transformation. Spatial transformer networks
 (STN for short) allow a neural network to learn how to perform spatial
@@ -31,19 +28,16 @@ invariance of the model.
 For example, it can crop a region of interest, scale and correct
 the orientation of an image. It can be a useful mechanism because CNNs
 are not invariant to rotation and scale and more general affine
-transformations.
-
-One of the best things about STN is the ability to simply plug it into
+transformations.One of the best things about STN is the ability to simply plug it into
 any existing CNN with very little modification.
 
 """
 # License: BSD
 # Author: Ghassen Hamrouni
 
-
 """Loading the data
 ----------------
-In this post we experiment with the classic MNIST dataset. Using a
+Here we experiment with the classic MNIST dataset and we use a
 standard convolutional network augmented with a spatial transformer
 network.
 """

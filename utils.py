@@ -6,10 +6,15 @@ from torchvision import datasets, transforms
 import numpy as np
 import matplotlib.pyplot as plt
 
+""" 
+**Author**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
+
+Definition of definition of various functions used during training and testing, e.g., train, test, and visualization functions.
+"""
+
 
 def train(train_loader, model, optimizer, device, epoch):
     # Switching on some parameters and layers during training (e.g., dropout layers)
-    
     model.train()
     for batch_idx, (data, target) in enumerate(train_loader):
         # We send the train data to the GPU
@@ -18,6 +23,7 @@ def train(train_loader, model, optimizer, device, epoch):
         output = model(data)
         # We use negative log likelihood loss
         loss = F.nll_loss(output, target)
+        # compute gradient and do an optimizer step
         loss.backward()
         optimizer.step()
         if batch_idx % 500 == 0:

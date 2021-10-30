@@ -15,6 +15,27 @@ from models import coordConvNet
 from utils import train, test, visualize_stn, convert_image_np
 
 
+"""
+Spatial Transformer Networks with CoordConv layers
+=====================================
+**Author**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
+
+STN part is based on the paper: "Spatial Transformer Networks" <https://arxiv.org/abs/1506.02025>`
+
+
+Code to augment a STN using CoordConv layers aiming to solve some limitations of classic Conv layers 
+by adding information about the coordinates of the input images to the input tensor. 
+The CoordConv layer is designed to be used a substitute of the regular Conv2D layer.
+
+You can read more about the CoordConv layers in the paper: "An intriguing failing of convolutional neural networks and the coordconv solution" <https://arxiv.org/pdf/1807.03247.pdf>
+"""
+
+"""Loading the data
+----------------
+Here we experiment with the classic MNIST dataset and we use a
+standard convolutional network augmented with a spatial transformer
+network and CoordConv layers.
+"""
 opener = urllib.request.build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 urllib.request.install_opener(opener)

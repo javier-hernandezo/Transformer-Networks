@@ -1,34 +1,32 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+from coord_conv import CoordConv 
 
 """ 
-Definition of the two types of models
- """
+**Author**: `Javier Hernandez-Ortega <https://github.com/uam-biometrics>`_
 
-# We define the architecture of the STN network
+Definition of the two types of models used in these experiments: 
+NET: CNN + STN
+coordConvNet: CNN + STN + CoordConv layers
+
+Based on https://github.com/Wizaron/coord-conv-pytorch. An implementation in PyTorch of the CoordConv paper:
+"An intriguing failing of convolutional neural networks and the CoordConv solution" https://arxiv.org/abs/1807.03247
+"""
 
 
 
-"""Depicting spatial transformer networks
---------------------------------------
-Spatial transformer networks boils down to three main components :
 
--  The localization network is a regular CNN which regresses the
-   transformation parameters. The transformation is never learned
-   explicitly from this dataset, instead the network learns automatically
+
+"""
+The STN in Net (a CNN) have three main components:
+-  The localization network is a CNN which regresses the
+   transformation parameters. The network learns automatically
    the spatial transformations that enhances the global accuracy.
 -  The grid generator generates a grid of coordinates in the input
    image corresponding to each pixel from the output image.
 -  The sampler uses the parameters of the transformation and applies
    it to the input image.
-
-.. figure:: /_static/img/stn/stn-arch.png
-
-.. Note::
-   We need the latest version of PyTorch that contains
-   affine_grid and grid_sample modules.
 """
 class Net(nn.Module):
     def __init__(self):
@@ -87,7 +85,11 @@ class Net(nn.Module):
 
 
 
-
+"""
+Same network but replacing the first Conv layer of Localization Network of the SNT with a CoordConv layer.
+The LN has the task of obtaining a affine transformation matrix from input images, and the CoordConv layers
+have shown to improve accuracy in that type of tasks.
+"""
 class coordConvNet(nn.Module):
     def __init__(self):
         super(coordConvNet, self).__init__()
@@ -99,7 +101,7 @@ class coordConvNet(nn.Module):
 
         # Spatial transformer localization-network
         self.localization = nn.Sequential(
-            nn.Conv2d(1, 8, kernel_size=7),
+            CoordConv(1, 8, kernel_size=7),
             nn.MaxPool2d(2, stride=2),
             nn.ReLU(True),
             nn.Conv2d(8, 10, kernel_size=5),
