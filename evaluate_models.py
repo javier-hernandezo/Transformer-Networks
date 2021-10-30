@@ -23,8 +23,8 @@ CoordConv layers to the LTN of the STN to improve the accuracy of the affine tra
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")             
 
 #Load trained models
-model_classic = torch.load('stn_classic.pt')
-model_coord = torch.load('stn_coordconv.pt')
+model_classic = torch.load('stn_classic.pt').to(device)
+model_coord = torch.load('stn_coordconv.pt').to(device)
 
 # Load test dataset
 test_loader = torch.utils.data.DataLoader(
